@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hl7.Fhir.R4" Version="1.9.0" />
-    <PackageReference Include="Hl7.Fhir.Specification.R4" Version="1.9.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="3.1.0" />
+    <PackageReference Include="Hl7.Fhir.R4" Version="3.6.0" />
+    <PackageReference Include="Hl7.Fhir.Specification.R4" Version="3.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="5.0.4" />
   </ItemGroup>
 
   <ItemGroup>
