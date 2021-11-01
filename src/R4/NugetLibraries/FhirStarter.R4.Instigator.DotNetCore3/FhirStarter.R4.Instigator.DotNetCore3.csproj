@@ -18,7 +18,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.7" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.7" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="3.1.0" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.1" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FhirStarter.R4.Detonator.DotNetCore3\FhirStarter.R4.Detonator.DotNetCore3.csproj" />
