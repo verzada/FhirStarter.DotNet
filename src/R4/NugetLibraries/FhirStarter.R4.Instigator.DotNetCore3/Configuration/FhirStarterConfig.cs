@@ -16,7 +16,7 @@ namespace FhirStarter.R4.Instigator.DotNetCore3.Configuration
 {
     public static class FhirStarterConfig
     {
-        public static void SetupFhir(IServiceCollection services, IConfigurationRoot fhirStarterSettings, CompatibilityVersion dotNetCoreVersion)
+        public static void SetupFhir(IServiceCollection services, IConfigurationRoot fhirStarterSettings)
         {
             AddFhirStarterSettings(services, fhirStarterSettings);
             RegisterServices(services, fhirStarterSettings);
