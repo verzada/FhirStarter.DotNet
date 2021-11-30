@@ -23,7 +23,8 @@ namespace FhirStarter.R4.Detonator.DotNetCore3.SparkEngine.Extensions
         public static string GetParameter(this HttpRequestMessage request, string key)
         {
             //foreach (var param in request.GetQueryNameValuePairs())
-            foreach (var param in request.Properties)
+            // foreach (var param in request.Properties)
+            foreach (var param in request.Options)
             {
                 if (param.Key == key) return param.Value.ToString();
             }

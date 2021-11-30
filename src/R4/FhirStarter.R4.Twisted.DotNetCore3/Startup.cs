@@ -10,7 +10,6 @@ using FhirStarter.R4.Instigator.DotNetCore3.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -37,50 +36,45 @@ namespace FhirStarter.R4.Twisted.DotNetCore3
         {
             var appSettings =
                 StartupConfigHelper.BuildConfigurationFromJson(AppContext.BaseDirectory, "appsettings.json");
-            FhirStarterConfig.SetupFhir(services, appSettings, CompatibilityVersion.Latest);
+            FhirStarterConfig.SetupFhir(services, appSettings);
 
             var detonator = FhirStarterConfig.GetDetonatorAssembly(appSettings["FhirStarterSettings:FhirDetonatorAssembly"]);
             var instigator = FhirStarterConfig.GetInstigatorAssembly(appSettings["FhirStarterSettings:FhirInstigatorAssembly"]);
 
             services.Configure<FhirStarterSettings>(appSettings.GetSection(nameof(FhirStarterSettings)));
             services.AddRouting();
-            
-            services.AddControllers(controller =>
-                {
-                    controller.OutputFormatters.Clear();
-                    controller.InputFormatters.Clear();
-                    controller.RespectBrowserAcceptHeader = true;
-                    // output
-                    controller.OutputFormatters.Add(new JsonFhirFormatterDotNetCore3());
-                    controller.OutputFormatters.Add(new XmlFhirSerializerOutputFormatterDotNetCore3());
-                    controller.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
 
-                    // input
-                    controller.InputFormatters.Add(new JsonFhirInputFormatter());
-                    controller.InputFormatters.Add(new XmlFhirSerializerInputFormatterDotNetCore3());
-
-                    controller.Filters.Add(typeof(FhirExceptionFilter));
-                })
-                .AddApplicationPart(instigator).AddApplicationPart(detonator).AddControllersAsServices()
-                .SetCompatibilityVersion(CompatibilityVersion.Latest);
-            services.AddHttpContextAccessor();
-            services.AddMvc(config =>
+            services.Configure<MvcOptions>(options =>
             {
-                config.RespectBrowserAcceptHeader = true;
+                //https://stackoverflow.com/questions/32942608/mvc-6-change-return-content-type
 
-                config.OutputFormatters.Add(new JsonFhirFormatterDotNetCore3());
-                config.OutputFormatters.Add(new XmlFhirSerializerOutputFormatterDotNetCore3());
-                config.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                // input
+                options.InputFormatters.Clear();
+                options.InputFormatters.Add(new XmlFhirSerializerInputFormatterDotNetCore3());
+                options.InputFormatters.Add(new JsonFhirInputFormatter());
 
-                
+
+                // output
+                options.OutputFormatters.Clear();
+                options.OutputFormatters.Insert(0, new JsonFhirFormatterDotNetCore3());
+                options.OutputFormatters.Insert(1, new XmlFhirSerializerOutputFormatterDotNetCore3());
+
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml+fhir", "application/xml+fhir");
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json+fhir", "application/json+fhir");
+
+                options.RespectBrowserAcceptHeader = true;
+
             });
+            services.AddControllers(controllers => {
+                controllers.Filters.Add(typeof(FhirExceptionFilter));
+                }).AddApplicationPart(instigator).AddApplicationPart(detonator).AddControllersAsServices();
+            services.AddHttpContextAccessor();
+
             services.AddSingleton<DiagnosticObserver>();
         }
 
-       
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, 
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
             DiagnosticListener diagnosticListenerSource, DiagnosticObserver diagnosticObserver)
         {
             diagnosticListenerSource.Subscribe(diagnosticObserver);
@@ -91,7 +85,7 @@ namespace FhirStarter.R4.Twisted.DotNetCore3
             {
                 endpoints.MapControllers();
             });
-            
+
 
         }
     }
