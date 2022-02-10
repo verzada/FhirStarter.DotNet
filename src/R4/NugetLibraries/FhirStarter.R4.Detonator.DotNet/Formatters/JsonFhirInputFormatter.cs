@@ -8,6 +8,7 @@ using Hl7.Fhir.Serialization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.IO;
 
+
 namespace FhirStarter.R4.Detonator.DotNet.Formatters
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace FhirStarter.R4.Detonator.DotNet.Formatters
         {
             if (context == null)
             {
-                throw new ArgumentException(nameof(context));
+                throw new ArgumentException("{context} is null", nameof(context));
             }
 
             await using var requestStream = _recyclableMemoryStreamManager.GetStream();
@@ -74,7 +75,7 @@ namespace FhirStarter.R4.Detonator.DotNet.Formatters
                 if (!string.IsNullOrEmpty(result))
                 {
                     var jsonParser = new FhirJsonParser();
-                    var resource = jsonParser.Parse(result);
+                    var resource = jsonParser.ParseAsync(result);
 
                     return await InputFormatterResult.SuccessAsync(resource);
                 }

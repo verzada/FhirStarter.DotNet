@@ -14,7 +14,7 @@ namespace FhirStarter.R4.Instigator.DotNet.Controllers
     public partial class FhirController
     {
 
-        private ILogger<IFhirService> _log;
+        private readonly ILogger<IFhirService> _log;
         private readonly IConfigurationRoot _appSettings;
         private readonly IEnumerable<IFhirService> _fhirServices;
         private readonly IProfileValidator _profileValidator;
@@ -22,7 +22,7 @@ namespace FhirStarter.R4.Instigator.DotNet.Controllers
         private readonly bool _validationEnabled;
         private readonly bool _returnValidatedResource;
 
-        private bool _isMockupEnabled;
+        private readonly bool _isMockupEnabled;
 
         public FhirController(ILogger<IFhirService> loggerFactory, IConfigurationRoot fhirStarterSettings,
             IServiceProvider serviceProvider, IProfileValidator profileValidator)

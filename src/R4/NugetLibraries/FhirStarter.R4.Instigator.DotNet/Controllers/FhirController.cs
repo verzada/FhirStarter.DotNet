@@ -80,15 +80,13 @@ namespace FhirStarter.R4.Instigator.DotNet.Controllers
                 return BadRequest($"Service for resource {nameof(resource)} must exist.");
             var key = Key.Create(type);
             var result = service.Create(key, resource);
-            switch (result)
+           
+            return result switch
             {
-                case null:
-                    return BadRequest($"Service for resource {nameof(resource)} must exist.");
-                case OperationOutcome _:
-                    return BadRequest(result);
-                default:
-                    return Ok(result);
-            }
+                null => BadRequest($"Service for resource {nameof(resource)} must exist."),
+                OperationOutcome _ => BadRequest(result),
+                _ => Ok(result)
+            };
         }
 
         public async Task<ActionResult> ResourceUpdate(string type, string id, Resource resource, IFhirBaseService service)

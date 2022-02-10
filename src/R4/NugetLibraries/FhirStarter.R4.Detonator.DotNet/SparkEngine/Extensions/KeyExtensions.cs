@@ -6,46 +6,44 @@
  * available at https://raw.github.com/furore-fhir/spark/master/LICENSE
  */
 
-using System;
 using System.Collections.Generic;
 using FhirStarter.R4.Detonator.DotNet.SparkEngine.Core;
-using Hl7.Fhir.Model;
 
 namespace FhirStarter.R4.Detonator.DotNet.SparkEngine.Extensions
 {
     public static class KeyExtensions
     {
-        public static Key ExtractKey(this Resource resource)
-        {
-            var _base = resource.ResourceBase != null ? resource.ResourceBase.ToString() : null;
-            var key = new Key(_base, resource.TypeName, resource.Id, resource.VersionId);
-            return key;
-        }
+        //public static Key ExtractKey(this Resource resource)
+        //{
+        //    var _base = resource.ResourceBase != null ? resource.ResourceBase.ToString() : null;
+        //    var key = new Key(_base, resource.TypeName, resource.Id, resource.VersionId);
+        //    return key;
+        //}
 
-        public static void ApplyTo(this IKey key, Resource resource)
-        {
-            resource.ResourceBase = key.HasBase() ?  new Uri(key.Base) : null;
-            resource.Id = key.ResourceId;
-            resource.VersionId = key.VersionId; 
-        }
+        //public static void ApplyTo(this IKey key, Resource resource)
+        //{
+        //    resource.ResourceBase = key.HasBase() ?  new Uri(key.Base) : null;
+        //    resource.Id = key.ResourceId;
+        //    resource.VersionId = key.VersionId; 
+        //}
 
-        private static Key Clone(this IKey self)
-        {
-            var key = new Key(self.Base, self.TypeName, self.ResourceId, self.VersionId);
-            return key;
-        }
+        //private static Key Clone(this IKey self)
+        //{
+        //    var key = new Key(self.Base, self.TypeName, self.ResourceId, self.VersionId);
+        //    return key;
+        //}
 
-        private static bool HasBase(this IKey key)
-        {
-            return !string.IsNullOrEmpty(key.Base);
-        }
+        //private static bool HasBase(this IKey key)
+        //{
+        //    return !string.IsNullOrEmpty(key.Base);
+        //}
 
-        public static Key WithoutBase(this IKey self)
-        {
-            var key = self.Clone();
-            key.Base = null;
-            return key;
-        }
+        //public static Key WithoutBase(this IKey self)
+        //{
+        //    var key = self.Clone();
+        //    key.Base = null;
+        //    return key;
+        //}
 
         private static IEnumerable<string> GetSegments(this IKey key)
         {

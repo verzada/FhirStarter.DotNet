@@ -32,15 +32,15 @@ namespace FhirStarter.R4.Instigator.DotNet.Diagnostics
                     var httpContext = GetHttpContext(value);
                     if (httpContext != null)
                     {
-                        var endTimestamp = (long)value.Value.GetType().GetProperty("timestamp")?.GetValue(value.Value);
-                        var startTimestamp = (long)httpContext.Items["StartTimestampKey"];
+                        var endTimestamp = (long)value.Value.GetType().GetProperty("timestamp")?.GetValue(value.Value)!;
+                        var startTimestamp = (long)httpContext.Items["StartTimestampKey"]!;
                         var duration = new TimeSpan((long)((endTimestamp - startTimestamp) * TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency));
                         var method = httpContext.Request.Method;
                         var contentType = httpContext.Request.ContentType;
                         var hostname = httpContext.Connection.RemoteIpAddress;
                         var requestLength = httpContext.Request.ContentLength;
                         var path = httpContext.Request.Path;
-                        _logger.LogInformation($"Method: {method}, ReqLength: {requestLength}, Hostname: {hostname}, Path: {path}, Elapsed: {Math.Round(duration.TotalMilliseconds)} ms, Content-Type: {contentType}");
+                        _logger.LogInformation("Method: {method}, ReqLength: {requestLength}, Hostname: {hostname}, Path: {path}, Elapsed: {elapsedMs} ms, Content-Type: {contentType}", method, requestLength, hostname,path, Math.Round(duration.TotalMilliseconds), contentType);
                     }
                     
                     break;

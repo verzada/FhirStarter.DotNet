@@ -48,7 +48,7 @@ namespace FhirStarter.R4.Detonator.DotNet.Formatters
         {
             if (context == null)
             {
-                throw new ArgumentException(nameof(context));
+                throw new ArgumentException("{context} is null", nameof(context));
             }
 
             await using var requestStream = _recyclableMemoryStreamManager.GetStream();
@@ -75,7 +75,7 @@ namespace FhirStarter.R4.Detonator.DotNet.Formatters
                 if (!string.IsNullOrEmpty(result))
                 {
                     var xmlFhirParser = new FhirXmlParser();
-                    var resource = xmlFhirParser.Parse(result);
+                    var resource = xmlFhirParser.ParseAsync(result);
 
                     return await InputFormatterResult.SuccessAsync(resource);
                 }

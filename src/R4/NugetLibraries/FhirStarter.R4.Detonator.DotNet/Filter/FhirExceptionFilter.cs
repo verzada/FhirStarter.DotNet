@@ -41,7 +41,7 @@ namespace FhirStarter.R4.Detonator.DotNet.Filter
             }
             catch (Exception exception)
             {
-                _logger.LogDebug($"Exception was probably not a FhirOperationException: {exception}");
+                _logger.LogDebug("Exception was probably not a FhirOperationException: {exception}", exception);
             }
 
             var issue = new OperationOutcome.IssueComponent
