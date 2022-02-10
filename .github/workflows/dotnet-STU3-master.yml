@@ -1,4 +1,4 @@
-name: .NET Core
+name: .NET STU3 master
 
 on:
   push:
