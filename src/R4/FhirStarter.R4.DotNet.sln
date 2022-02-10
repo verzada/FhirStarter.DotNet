@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget Libraries", "Nuget Libraries", "{330F21AB-FA4C-4F2D-9300-E64F4AFA027E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{1FC89FCF-B935-488A-9FFC-9C230B3F1CEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.R4.Detonator.DotNet", "NugetLibraries\FhirStarter.R4.Detonator.DotNet\FhirStarter.R4.Detonator.DotNet.csproj", "{5147537A-A174-4C3F-BB07-429D3CB3398B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.R4.Instigator.DotNet", "NugetLibraries\FhirStarter.R4.Instigator.DotNet\FhirStarter.R4.Instigator.DotNet.csproj", "{0301925A-23F9-4339-A48D-EBE0343F2E00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.R4.Twisted.DotNet", "FhirStarter.R4.Twisted.DotNet\FhirStarter.R4.Twisted.DotNet.csproj", "{7012A02D-5AB5-4FD7-BF4F-C73C5C3A0C5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5147537A-A174-4C3F-BB07-429D3CB3398B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5147537A-A174-4C3F-BB07-429D3CB3398B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5147537A-A174-4C3F-BB07-429D3CB3398B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5147537A-A174-4C3F-BB07-429D3CB3398B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0301925A-23F9-4339-A48D-EBE0343F2E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0301925A-23F9-4339-A48D-EBE0343F2E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0301925A-23F9-4339-A48D-EBE0343F2E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0301925A-23F9-4339-A48D-EBE0343F2E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7012A02D-5AB5-4FD7-BF4F-C73C5C3A0C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7012A02D-5AB5-4FD7-BF4F-C73C5C3A0C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7012A02D-5AB5-4FD7-BF4F-C73C5C3A0C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7012A02D-5AB5-4FD7-BF4F-C73C5C3A0C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5147537A-A174-4C3F-BB07-429D3CB3398B} = {330F21AB-FA4C-4F2D-9300-E64F4AFA027E}
+		{0301925A-23F9-4339-A48D-EBE0343F2E00} = {330F21AB-FA4C-4F2D-9300-E64F4AFA027E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {771356F9-D8D2-43DB-833C-FDD5BADE7B95}
+	EndGlobalSection
+EndGlobal
