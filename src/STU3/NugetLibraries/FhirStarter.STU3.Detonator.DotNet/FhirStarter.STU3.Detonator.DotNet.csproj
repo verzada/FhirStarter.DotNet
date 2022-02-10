@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hl7.Fhir.Specification.STU3" Version="3.8.0">
+      <ExcludeAssets>contentFiles</ExcludeAssets>
+      <PrivateAssets>contentfiles</PrivateAssets>
+      <IncludeAssets>runtime; compile; build; native; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Hl7.Fhir.STU3" Version="3.8.0" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="SparkEngine\ExceptionHandling\**" />
+    <Compile Remove="SparkEngine\Filters\**" />
+    <Compile Remove="SparkEngine\Formatters\**" />
+    <Compile Remove="SparkEngine\Handlers\**" />
+    <Compile Remove="SparkEngine\Infrastructure\**" />
+    <Compile Remove="SparkEngine\Search\**" />
+    <EmbeddedResource Remove="SparkEngine\ExceptionHandling\**" />
+    <EmbeddedResource Remove="SparkEngine\Filters\**" />
+    <EmbeddedResource Remove="SparkEngine\Formatters\**" />
+    <EmbeddedResource Remove="SparkEngine\Handlers\**" />
+    <EmbeddedResource Remove="SparkEngine\Infrastructure\**" />
+    <EmbeddedResource Remove="SparkEngine\Search\**" />
+    <None Remove="SparkEngine\ExceptionHandling\**" />
+    <None Remove="SparkEngine\Filters\**" />
+    <None Remove="SparkEngine\Formatters\**" />
+    <None Remove="SparkEngine\Handlers\**" />
+    <None Remove="SparkEngine\Infrastructure\**" />
+    <None Remove="SparkEngine\Search\**" />
+    <None Remove="**\specification.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Formatters\FhirMediaTypeFormatter.cs" />
+    <Compile Remove="Formatters\JsonFhirFormatter.cs" />
+    <Compile Remove="Formatters\XmlFhirSerializerOutputFormatter.cs" />
+    <Compile Remove="SparkEngine\Auxiliary\LimitedStream.cs" />
+    <Compile Remove="SparkEngine\Auxiliary\XmlSignatureHelper.cs" />
+    <Compile Remove="SparkEngine\Core\Const.cs" />
+    <Compile Remove="SparkEngine\Core\Error.cs" />
+    <Compile Remove="SparkEngine\Core\FhirMediaTypes.cs" />
+    <Compile Remove="SparkEngine\Core\FhirReponse.cs" />
+    <Compile Remove="SparkEngine\Core\Interaction.cs" />
+    <Compile Remove="SparkEngine\Core\SparkException.cs" />
+    <Compile Remove="SparkEngine\Extensions\HttpConfigurationFhirExtensions.cs" />
+    <Compile Remove="SparkEngine\Extensions\HttpRequestFhirExtensions.cs" />
+    <Compile Remove="SparkEngine\Extensions\OperationOutcomeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SparkEngine\renderxmlashtml.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SparkEngine\renderxmlashtml.xslt" />
+  </ItemGroup>
+</Project>

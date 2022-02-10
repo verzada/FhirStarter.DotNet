@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget Libraries", "Nuget Libraries", "{330F21AB-FA4C-4F2D-9300-E64F4AFA027E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{1FC89FCF-B935-488A-9FFC-9C230B3F1CEA}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\specification.zip = Resources\specification.zip
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{357CA148-9573-4AE3-B90F-E1D35D39971F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.STU3.Twisted.DotNet", "Application\FhirStarter.STU3.Twisted.DotNet\FhirStarter.STU3.Twisted.DotNet.csproj", "{A28594AB-085B-4DB9-8AB0-CDF30A0276AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.STU3.Detonator.DotNet", "NugetLibraries\FhirStarter.STU3.Detonator.DotNet\FhirStarter.STU3.Detonator.DotNet.csproj", "{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirStarter.STU3.Instigator.DotNet", "NugetLibraries\FhirStarter.STU3.Instigator.DotNet\FhirStarter.STU3.Instigator.DotNet.csproj", "{63A80E84-6EE5-46D7-9617-D637AD824BB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A28594AB-085B-4DB9-8AB0-CDF30A0276AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28594AB-085B-4DB9-8AB0-CDF30A0276AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28594AB-085B-4DB9-8AB0-CDF30A0276AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28594AB-085B-4DB9-8AB0-CDF30A0276AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A80E84-6EE5-46D7-9617-D637AD824BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A80E84-6EE5-46D7-9617-D637AD824BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A80E84-6EE5-46D7-9617-D637AD824BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A80E84-6EE5-46D7-9617-D637AD824BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A28594AB-085B-4DB9-8AB0-CDF30A0276AD} = {357CA148-9573-4AE3-B90F-E1D35D39971F}
+		{68918610-7BA2-4CEE-803F-D6ECE8B5CA4D} = {330F21AB-FA4C-4F2D-9300-E64F4AFA027E}
+		{63A80E84-6EE5-46D7-9617-D637AD824BB9} = {330F21AB-FA4C-4F2D-9300-E64F4AFA027E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {771356F9-D8D2-43DB-833C-FDD5BADE7B95}
+	EndGlobalSection
+EndGlobal
