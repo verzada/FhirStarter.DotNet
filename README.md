@@ -14,4 +14,9 @@ The code behind the libraries are pretty much the same, but are based on two dif
 
 ## Getting started - R4
 
+### BREAKING CHANGES
+* The namespace does no longer contain DotNetCore3  
+* CompatibilityVersion.Latest has been removed
+* Possibly breaking change: unnecessary dependencies.
+
 [Getting started with R4](src/docs/R4/GettingStarted-R4.md)
