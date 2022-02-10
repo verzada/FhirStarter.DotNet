@@ -1,5 +1,5 @@
-# FhirStarter.DotNetCore3.0
-FhirStarter based on .Net Core 3.0.
+# FhirStarter.DotNet
+FhirStarter based on .Net 
 
 This version of FhirStarter supports two different versions of FHIR.
 
