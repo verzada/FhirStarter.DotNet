@@ -11,7 +11,7 @@
     <None Remove="log4net.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Hl7.Fhir.STU3" Version="3.8.0" />
+    <PackageReference Include="Hl7.Fhir.STU3" Version="3.8.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
